@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 
 @app.route('/<users>/<id>')
-def users(users, id):
+def id_users(users, id):
     return render_template('users/show.html', id=id, nickname=users)
 
 
@@ -14,7 +14,7 @@ def get_users():
     return render_template('users/index.html', users=users)
 
 
-@app.route('/users')
+@app.route('/users/')
 def filter_users():
     users = ['mike', 'mishel', 'adel', 'keks', 'kamila']
     term = request.args.get('term')
